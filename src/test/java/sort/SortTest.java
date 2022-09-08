@@ -22,13 +22,14 @@ public class SortTest {
 
   private List<Integer> sort(List<Integer> list) {
     if (list.size() > 1) {
-      int firstIndex = 0;
-      int secondIndex = firstIndex + 1;
-      if (list.get(firstIndex) > list.get(secondIndex)) {
-        int first = list.get(firstIndex);
-        int second = list.get(secondIndex);
-        list.set(firstIndex, second);
-        list.set(secondIndex, first);
+      for (int firstIndex = 0; firstIndex < list.size() - 1; firstIndex++) {
+        int secondIndex = firstIndex + 1;
+        if (list.get(firstIndex) > list.get(secondIndex)) {
+          int first = list.get(firstIndex);
+          int second = list.get(secondIndex);
+          list.set(firstIndex, second);
+          list.set(secondIndex, first);
+        }
       }
     }
     return list;
